@@ -1,0 +1,18 @@
+{
+  "name": "loja-smarttbott",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "KarineCostaS"
+  },
+  "author": "Karine costa",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.12.0"
+  }
+}
