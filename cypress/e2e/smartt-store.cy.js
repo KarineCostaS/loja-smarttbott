@@ -11,19 +11,28 @@ describe('SmarttStore Login', () => {
     
   
 
-it ('Acessa as Estrategias da Loja', () => {
+it ('Verifica Carteira Multi Robos da Loja da Loja', () => {
   
-
-  cy.wait(1000)
-  cy.get('svg[data-icon="cart-plus"]').click(); //clica na LOja
+  cy.wait(1000);
+  cy.get('svg[data-icon="cart-plus"]').click(); //clica na Loja
   Cypress.on('uncaught:exception', (err, runnable) => {
     //retorna falso os erros que podem danificar a automação, tratamento de exceção
     return false //
   })
-  
-  
+  cy.verificaCarteiraMulti(); //Verificar a visibilidade da estrategia Carteira Multi Robo
 
 })
 
+it ('Verifica Estrategia de Trade Sincronizado na Loja', () => {
 
+  cy.wait(1000);  
+  cy.get('svg[data-icon="cart-plus"]').click(); //clica na Loja
+  Cypress.on('uncaught:exception', (err, runnable) => {
+    //retorna falso os erros que podem danificar a automação, tratamento de exceção
+    return false //
+  })
+
+  cy.verificaTradeSincronizado();
+
+})
 })
