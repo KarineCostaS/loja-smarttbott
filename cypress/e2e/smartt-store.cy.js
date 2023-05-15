@@ -15,6 +15,8 @@ it ('Verifica Carteira Multi Robos da Loja da Loja', () => {
   
   cy.wait(1000);
   cy.get('svg[data-icon="cart-plus"]').click(); //clica na Loja
+
+  
   Cypress.on('uncaught:exception', (err, runnable) => {
     //retorna falso os erros que podem danificar a automação, tratamento de exceção
     return false //
