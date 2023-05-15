@@ -35,8 +35,10 @@ it ('Verifica Estrategia de Trade Sincronizado na Loja', () => {
     //retorna falso os erros que podem danificar a automação, tratamento de exceção
     return false //
   })
-  cy.wait(1000);
-  cy.verificaTradeSincronizado();
+
+  cy.wait(1000)
+  cy.get('p.text-gray-80.xl\\:group-hover\\:text-white')
+  .should('be.visible')
 
 
 })
