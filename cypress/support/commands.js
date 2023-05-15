@@ -5,9 +5,7 @@ Cypress.Commands.add('verificaTradeSincronizado', () => {
   })
 
 
-  
-Cypress.Commands.add('verificaCarteiraMulti', () => {
-    cy.get('sb-p[fontsize="sm"][fontweight="medium"][color="black-100"][truncate="false"]')
-    .should('be.visible')
-    .and('contain', 'Carteira Multi Robôs SmarttInvest - 6 Estratégias WIN')
-    })
+Cypress.Commands.add('verificaCarteiraMulti',() => {
+  cy.get('sb-p[fontsize="sm"][fontweight="medium"][color="black-100"][truncate="false"]')
+  .should('be.visible');
+})

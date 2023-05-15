@@ -21,7 +21,9 @@ it ('Verifica Carteira Multi Robos da Loja da Loja', () => {
     //retorna falso os erros que podem danificar a automação, tratamento de exceção
     return false //
   })
-  cy.verificaCarteiraMulti(); //Verificar a visibilidade da estrategia Carteira Multi Robo
+
+  cy.verificaCarteiraMulti();
+  
 
 })
 
@@ -35,6 +37,7 @@ it ('Verifica Estrategia de Trade Sincronizado na Loja', () => {
   })
 
   cy.verificaTradeSincronizado();
+
 
 })
 })
