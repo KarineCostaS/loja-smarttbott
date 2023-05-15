@@ -22,8 +22,8 @@ it ('Verifica Carteira Multi Robos da Loja da Loja', () => {
     return false //
   })
   cy.wait(1000);
-  cy.verificaCarteiraMulti();
-  
+  cy.get('sb-p[fontsize="sm"][fontweight="medium"][color="black-100"][truncate="false"]')
+  .should('be.visible');  
 
 })
 
