@@ -23,7 +23,8 @@ it ('Verifica Carteira Multi Robos da Loja da Loja', () => {
   })
   cy.wait(1000);
   cy.get('sb-p[fontsize="sm"][fontweight="medium"][color="black-100"][truncate="false"]')
-  .should('be.visible');  
+  .contains('Algoritmia - Erastóstenes')
+  .should('be.visible');
 
 })
 
