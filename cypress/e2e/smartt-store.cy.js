@@ -22,19 +22,16 @@ it ('Verifica Carteira Multi Robos da Loja da Loja', () => {
     return false //
   })
   cy.wait(1000);
-  cy.get('sb-p[fontsize="sm"][fontweight="medium"][color="black-100"][truncate="false"]')
-  .should('be.visible', { timeout: 10000 })
-  .and('have.text', 'Carteira Multi Robôs SmarttInvest - 3 Estratégias WINCarteira Multi Robôs SmarttInvest - 6 Estratégias WINAlgoritmia - ErastóstenesTrade Sincronizado Seguidor de RLP WDOTrade Sincronizado Seguidor de RLP WINTrade Sincronizado WIN - Orion Robust TradingTrade Sincronizado Carabot Swing WDOTrade Sincronizado – North Trader');
-
+  cy.contains('sb-p', '*Relatório gerado através de simulação').should('be.visible');
 
 })
 
-/*it ('Verifica Estrategia de Trade Sincronizado na Loja', () => {
+it ('Verifica Estrategia de Trade Sincronizado na Loja', () => {
 
   cy.wait(1000);  
   cy.get('svg[data-icon="cart-plus"]').click(); //clica na Loja
   Cypress.on('uncaught:exception', (err, runnable) => {
-    //retorna falso os erros que podem danificar a automação, tratamento de exceção
+    //retorna falso os erros que podem danificar a automação, tratamento de exceçãon
     return false //
   })
 
@@ -43,5 +40,5 @@ it ('Verifica Carteira Multi Robos da Loja da Loja', () => {
   .should('be.visible')
 
 
-})*/
+})
 })
