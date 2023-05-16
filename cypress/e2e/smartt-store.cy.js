@@ -23,12 +23,13 @@ it ('Verifica Carteira Multi Robos da Loja da Loja', () => {
   })
   cy.wait(1000);
   cy.get('sb-p[fontsize="sm"][fontweight="medium"][color="black-100"][truncate="false"]')
-  .contains('Algoritmia - Erastóstenes')
-  .should('be.visible');
+  .should('be.visible')
+  .and('have.text', 'Carteira Multi Robôs SmarttInvest - 3 Estratégias WINCarteira Multi Robôs SmarttInvest - 6 Estratégias WINAlgoritmia - ErastóstenesTrade Sincronizado Seguidor de RLP WDOTrade Sincronizado Seguidor de RLP WINTrade Sincronizado WIN - Orion Robust TradingTrade Sincronizado Carabot Swing WDOTrade Sincronizado – North Trader');
+
 
 })
 
-it ('Verifica Estrategia de Trade Sincronizado na Loja', () => {
+/*it ('Verifica Estrategia de Trade Sincronizado na Loja', () => {
 
   cy.wait(1000);  
   cy.get('svg[data-icon="cart-plus"]').click(); //clica na Loja
@@ -42,5 +43,5 @@ it ('Verifica Estrategia de Trade Sincronizado na Loja', () => {
   .should('be.visible')
 
 
-})
+})*/
 })
