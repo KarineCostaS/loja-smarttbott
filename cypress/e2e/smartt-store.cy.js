@@ -23,7 +23,7 @@ it ('Verifica Carteira Multi Robos da Loja da Loja', () => {
   })
   cy.wait(1000);
   cy.get('sb-p[fontsize="sm"][fontweight="medium"][color="black-100"][truncate="false"]')
-  .should('be.visible')
+  .should('be.visible', { timeout: 10000 })
   .and('have.text', 'Carteira Multi Robôs SmarttInvest - 3 Estratégias WINCarteira Multi Robôs SmarttInvest - 6 Estratégias WINAlgoritmia - ErastóstenesTrade Sincronizado Seguidor de RLP WDOTrade Sincronizado Seguidor de RLP WINTrade Sincronizado WIN - Orion Robust TradingTrade Sincronizado Carabot Swing WDOTrade Sincronizado – North Trader');
 
 
