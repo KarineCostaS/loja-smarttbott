@@ -1,0 +1,30 @@
+name: Notificações
+
+on:
+  workflow_run:
+    workflows:
+      - "Executar Testes"
+    types:
+      - completed
+
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v2
+
+      - name: Ler resultado dos testes
+        id: test_results
+        run: |
+          test_result=$(cat ${{ github.workspace }}/path/to/test/result.txt)
+          echo "::set-output name=result::$test_result"
+
+      - name: Enviar notificação por e-mail em caso de falha
+        if: ${{ failure() }}
+        env:
+          EMAILS: ${{ secrets.EMAIL_NOTIFICATION }},${{ secrets.EMAIL_NOTIFICATION_2 }},${{ secrets.EMAIL_NOTIFICATION_3 }}
+          
+        run: |
+          echo "Resultado dos testes: ${{ steps.test_results.outputs.result }}" | mail -s "Notificação do GitHub Actions" $EMAILS
