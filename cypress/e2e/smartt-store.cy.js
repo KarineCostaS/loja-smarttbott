@@ -9,7 +9,7 @@ describe('SmarttStore Login', () => {
   
 
 
-it ('Verifica Carteira Multi Robos da Loja da Loja', () => {
+it.only ('Verifica Carteira Multi Robos da Loja da Loja', () => {
   
   cy.wait(1000);
   cy.get('svg[data-icon="cart-plus"]').click(); //clica na Loja
