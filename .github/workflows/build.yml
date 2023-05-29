@@ -40,8 +40,9 @@ jobs:
       - name: Executar testes
         run: |
           # Comandos para executar os testes
-          ./node_modules/.bin/cypress run --spec "cypress/e2e/smarttstore/estrategias.estrategiaTradeSincornizado.cy.js"
-          ./node_modules/.bin/cypress run --spec "cypress/e2e/smarttstore/estrategias.carteiraMultiRobos.cy.js"
+          ./node_modules/.bin/cypress run --spec "/e2e/smarttstore/estrategias.estrategiaTradeSincornizado.cy.js"
+          ./node_modules/.bin/cypress run --spec "/e2e/smarttstore/estrategias.carteiraMultiRobos.cy.js"
+          
          
 
       - name: Salvar artefatos
