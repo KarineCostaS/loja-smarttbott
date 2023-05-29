@@ -1,0 +1,59 @@
+name: Build e Teste
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.16.0] # Defina a versão do Node.js desejada
+
+    env:
+      CYPRESS_CACHE_FOLDER: ${{ github.workspace }}/cache/Cypress
+      CI_NODE_TOTAL: 2 # Define o número de nós usados para paralelização
+      CI_NODE_INDEX: ${{ github.run_number }} # Define o índice do nó atual
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v2
+
+      - name: Configurar o ambiente
+        run: |
+          # Comandos para configurar o ambiente de build
+          npm ci
+
+      - name: Instalar Cypress
+        run: |
+          # Instalar o Cypress
+          npm install cypress
+
+      - name: Conceder permissões de execução ao Cypress
+        run: |
+          # Concede permissões de execução ao comando cypress
+          chmod +x ./node_modules/.bin/cypress
+
+      - name: Executar testes
+        run: |
+          # Comandos para executar os testes
+          ./node_modules/.bin/cypress run --spec "cypress/e2e/smartt-store.cy.js"
+         
+
+      - name: Salvar artefatos
+        if: always()
+        run: |
+          # Comandos para salvar os artefatos dos testes
+          mkdir -p ${{ github.workspace }}/artifacts
+          cp -r cypress/screenshots/ ${{ github.workspace }}/artifacts
+          cp -r cypress/videos/ ${{ github.workspace }}/artifacts
+
+      - name: Publicar artefatos
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Test-Artifacts
+          path: ${{ github.workspace }}/artifacts
