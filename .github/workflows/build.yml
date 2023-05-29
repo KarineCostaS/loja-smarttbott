@@ -41,6 +41,7 @@ jobs:
         run: |
           # Comandos para executar os testes
           ./node_modules/.bin/cypress run --spec "cypress/e2e/estrategias/carteiraMultiRobos.cy.js"
+          ./node_modules/.bin/cypress run --spec "cypress/e2e/estrategias/estrategiaTradeSincronizado.cy.js"
        
 
       - name: Salvar artefatos
@@ -48,12 +49,12 @@ jobs:
         run: |
           # Comandos para salvar os artefatos dos testes
           mkdir -p ${{ github.workspace }}/artifacts
-          cp -r cypress/screenshots/ ${{ github.workspace }}/artifacts
-          cp -r cypress/videos/ ${{ github.workspace }}/artifacts
+          cp -r cypress/support/screenshots/ ${{ github.workspace }}/artifacts
+          cp -r cypress/support/videos/ ${{ github.workspace }}/artifacts
 
       - name: Publicar artefatos
         if: always()
         uses: actions/upload-artifact@v2
-        with:
-          name: Test-Artifacts
-          path: ${{ github.workspace }}/artifacts
+              with:
+                  name: Test-Artifacts
+                  path: ${{ github.workspace }}/artifacts
