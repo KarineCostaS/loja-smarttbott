@@ -55,6 +55,6 @@ jobs:
       - name: Publicar artefatos
         if: always()
         uses: actions/upload-artifact@v2
-              with:
-                  name: Test-Artifacts
-                  path: ${{ github.workspace }}/artifacts
+        with:
+          name: Test-Artifacts
+          path: ${{ github.workspace }}/artifacts
