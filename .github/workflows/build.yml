@@ -60,3 +60,13 @@ jobs:
         with:
           name: Test-Artifacts
           path: ${{ github.workspace }}/artifacts
+          
+          
+      - name: Capturar resultado dos testes
+        id: test-result
+        run: |
+          # Comandos para capturar o resultado dos testes
+          test_result=$(./node_modules/.bin/cypress run --spec "cypress/e2e/estrategias/carteiraMultiRobos.cy.js" --reporter junit)
+          echo "::set-output name=result::$test_result"
+          
+      
