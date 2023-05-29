@@ -18,4 +18,15 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v2
 
-      # Restante dos passos do seu fluxo de trabalho (configuração, instalação do Cypress, execução dos testes, etc.)
+  send-email:
+    needs: [build-and-test]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v2
+
+      - name: Enviar e-mail
+        run: |
+          # Comandos para enviar o e-mail usando o arquivo YAML separado
+          ./send-email.yml
