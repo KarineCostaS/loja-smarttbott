@@ -47,8 +47,10 @@ jobs:
       - name: Salvar artefatos
         if: always()
         run: |
-          # Comandos para salvar os artefatos dos testes
+          # Comandos para criar a pasta de artefatos
           mkdir -p ${{ github.workspace }}/artifacts
+
+          # Comandos para salvar os artefatos dos testes
           cp -r cypress/support/screenshots/ ${{ github.workspace }}/artifacts
           cp -r cypress/support/videos/ ${{ github.workspace }}/artifacts
 
