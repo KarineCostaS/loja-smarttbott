@@ -37,10 +37,11 @@ jobs:
           # Concede permissões de execução ao comando cypress
           chmod +x ./node_modules/.bin/cypress
 
-      - name: Executar testes
-        run: |
-          # Comandos para executar os testes
-          ./node_modules/.bin/cypress run --spec "cypress/e2e/estrategias/carteiraMultiRobos.cy.js"
+      - name: Executar testes - EstrategiaTradeSincronizado
+        run: npm run cy:run -- --spec "loja-smarttbott/cypress/e2e/estrategias/estrategiaTradeSincronizado.cy.js"
+      
+      - name: Executar testes - CarteiraMultiRobos
+        run: npm run cy:run -- --spec "loja-smarttbott/cypress/e2e/estrategias/carteiraMultiRobos.cy.js"
          
           
       
