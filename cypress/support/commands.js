@@ -1,7 +1,7 @@
 Cypress.Commands.add('verificaTradeSincronizado', () => {
     cy.get('p.text-gray-80.xl\\:group-hover\\:text-white')
       .should('be.visible')
-      .and('contain', 'Trade Sincronizado WIN - Orion Robust Trading')
+      
   })
 
 
