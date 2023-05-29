@@ -1,5 +1,5 @@
 import LoginPage from './loginPage';
-import CarteiraMultiRobosPage from './CarteiraMultiRobosPage.js';
+import CarteiraMultiRobosPage from './carteiraMultiRobosPage.js';
 
 describe('SmarttStore Carteira Multi Robos', () => {
   const loginPage = new LoginPage();
