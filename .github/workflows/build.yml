@@ -97,7 +97,5 @@ jobs:
         if: ${{ failure() }}
         env:
           EMAILS: ${{ secrets.EMAIL_NOTIFICATION }},${{ secrets.EMAIL_NOTIFICATION_2 }},${{ secrets.EMAIL_NOTIFICATION_3 }},${{ secrets.EMAIL_NOTIFICATION_4 }},${{ secrets.EMAIL_NOTIFICATION_5 }}
-          
         run: |
-          echo "
-      
+          echo "Resultado dos testes: ${{ steps.test_results.outputs.result }}" | mail -s "Notificação do GitHub Actions" $EMAILS
