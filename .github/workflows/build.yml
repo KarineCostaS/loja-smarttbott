@@ -79,23 +79,4 @@ jobs:
           test_result=$(./node_modules/.bin/cypress run --spec "cypress/e2e/estrategias/carteiraMultiRobos.cy.js" --reporter junit)
           echo "::set-output name=result::$test_result"
           
-  send-email:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout do repositório
-        uses: actions/checkout@v2
-
-      - name: Ler resultado dos testes
-        id: test_results
-        run: |
-          test_result=$(cat ${{ github.workspace }}/path/to/test/result.txt)
-          echo "::set-output name=result::$test_result"
-
-      - name: Enviar notificação por e-mail em caso de falha
-        if: ${{ failure() }}
-        env:
-          EMAILS: ${{ secrets.EMAIL_NOTIFICATION }},${{ secrets.EMAIL_NOTIFICATION_2 }},${{ secrets.EMAIL_NOTIFICATION_3 }},${{ secrets.EMAIL_NOTIFICATION_4 }},${{ secrets.EMAIL_NOTIFICATION_5 }}
-        run: |
-          echo "Resultado dos testes: ${{ steps.test_results.outputs.result }}" | mail -s "Notificação do GitHub Actions" $EMAILS
+  
