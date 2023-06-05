@@ -1,4 +1,5 @@
 **Automação da Loja SmarttBott**
+
 Verificação da visualização de Robôs na Página de Estratégias da Loja
 O objetivo desta automação é garantir que as estratégias de robôs na loja SmarttBott estejam sempre visíveis. Em caso de qualquer problema ou bug que cause a indisponibilidade das estratégias, essa automação nos permite identificar e corrigir o defeito o mais rápido possível.
 
