@@ -16,8 +16,6 @@ Melhoria da qualidade: A automação ajuda a garantir que as estratégias de rob
 
 **Como executar os testes**
 
-**Para executar os testes automatizados com o Cypress, siga as etapas abaixo:**
-
 Faça o clone deste repositório para o seu ambiente local.
 Certifique-se de ter o Cypress instalado em seu projeto.
 Abra o Cypress usando o comando npx cypress open.
